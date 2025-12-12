@@ -14,25 +14,21 @@ for (let index = 0; index < arrayRandomGame.length; index++) {
 
 //Definisco la mia varabiale per un output del countdown
 const outputCounter = document.getElementById("countdown");
-let seconds = 3;
+let seconds = 10;
 
 const timer= setInterval( function() {
+    outputCounter.innerText=seconds;
     if(seconds===0){
         clearInterval(timer)
+        outputCounter.classList.add("d-none")
+        document.getElementById("answers-form").classList.remove("d-none");
+        randomNumbers.classList.add("d-none");
     }
     else{
         seconds--;
-    console.log(seconds)
     }
+    console.log(timer)
 }, 1000);
-
-
-
-
-setTimeout(function () {
-  const input = document.getElementById("answers-form").classList.remove("d-none");
-  randomNumbers.classList.add("d-none");
-}, 3000);
 
 
 //-Definire una funzione che mi generi numeri random
