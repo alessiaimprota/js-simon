@@ -3,14 +3,19 @@ const arrayRandomGame= arrayWithRandomNumbers(1, 50, 5);
 
 //Definisco i numeri e li "inietto" in pagina
 const randomNumbers= document.getElementById("numbers-list")
-
+//Alla luce del fatto che senza ciclo mi inseriva tutti i numeri in un unico li ho fatto un 
+//ciclo per far sì che ogni elemento dell'array venisse inserito in un li esclusivo
 for (let index = 0; index < arrayRandomGame.length; index++) {
     randomNumbers.innerHTML+=`<li> ${arrayRandomGame[index]} </li>`
 }
 
+//Faccio partire un timer che nel mentre continua a verdersi in pagina e
+// al termine del quale spariscono i numeri e si mostrano gli input
 
-
-
+setTimeout(function() {
+    const input = document.getElementById("answers-form").classList.remove("d-none")
+    randomNumbers.classList.add("d-none")
+},  3000);
 
 
 
